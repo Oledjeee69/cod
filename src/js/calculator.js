@@ -10,6 +10,7 @@ import {
   formatMoney,
   calculateMonthly,
 } from './utils.js';
+import { initApplicationDialog } from './application-dialog.js';
 
 export function initCalculator(form) {
   const priceRange = form.querySelector('#car-price-range');
@@ -27,6 +28,7 @@ export function initCalculator(form) {
 
   const monthlyEl = form.querySelector('#monthly-payment');
   const submitBtn = form.querySelector('#submit-btn');
+  const applicationDialog = initApplicationDialog(form, submitBtn);
 
   let downPercent = Number(downRange.value);
 
@@ -117,8 +119,7 @@ export function initCalculator(form) {
       monthlyPayment: calculateMonthly(price, down, term),
     };
 
-    submitBtn.disabled = true;
-    alert(JSON.stringify(payload, null, 2));
+    applicationDialog.show(payload);
   });
 
   render();

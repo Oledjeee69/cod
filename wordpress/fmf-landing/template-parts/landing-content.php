@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-$hero_image = esc_url(FMF_LANDING_URI . '/dist/assets/car-hero.svg');
+$hero_candidates = glob(FMF_LANDING_DIR . '/dist/assets/car-hero*.svg') ?: [];
+$hero_file = $hero_candidates !== [] ? basename($hero_candidates[0]) : 'car-hero.svg';
+$hero_image = esc_url(FMF_LANDING_URI . '/dist/assets/' . $hero_file);
 ?>
 <main class="page__main">
     <section class="hero">

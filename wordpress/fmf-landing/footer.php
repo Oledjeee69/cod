@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+get_template_part('template-parts/application', 'dialog');
 ?>
 <footer class="footer">
     <div class="container footer__inner">

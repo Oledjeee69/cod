@@ -1,0 +1,45 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.application-dialog {
+  width: min(560px, calc(100% - 32px));
+  padding: 0;
+  border: none;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+
+  &::backdrop {
+    background: rgba($color-text, 0.55);
+  }
+
+  &__inner {
+    padding: 28px;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    color: $color-text-muted;
+    margin-bottom: 12px;
+  }
+
+  &__json {
+    margin: 0 0 20px;
+    padding: 16px;
+    border-radius: $radius-sm;
+    background: $color-bg;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  &__close {
+    width: 100%;
+  }
+}

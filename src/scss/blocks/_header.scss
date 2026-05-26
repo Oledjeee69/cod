@@ -9,12 +9,34 @@
   backdrop-filter: blur(12px);
   border-bottom: 1px solid $color-border;
 
+  &__backdrop {
+    display: none;
+    position: fixed;
+    inset: 72px 0 0;
+    background: rgba($color-text, 0.45);
+    z-index: 109;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $transition;
+
+    @media (max-width: #{$bp-desktop - 1px}) {
+      display: block;
+    }
+  }
+
+  &--menu-open &__backdrop {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   &__inner {
     @include container;
     display: flex;
     align-items: center;
     gap: 24px;
     min-height: 72px;
+    position: relative;
+    z-index: 111;
   }
 
   &__logo {
@@ -51,26 +73,38 @@
 
     @media (max-width: #{$bp-desktop - 1px}) {
       position: fixed;
-      inset: 72px 0 auto 0;
+      top: 72px;
+      left: 0;
+      right: 0;
+      z-index: 110;
+      max-height: calc(100vh - 72px);
+      overflow-y: auto;
       padding: 24px;
       background: $color-surface;
       border-bottom: 1px solid $color-border;
-      transform: translateY(-120%);
+      box-shadow: $shadow-card;
+      transform: translateY(-8px);
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
-      transition: transform $transition, opacity $transition;
+      transition: transform $transition, opacity $transition, visibility $transition;
+    }
+  }
 
-      &.nav--open {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-      }
+  &--menu-open &__nav,
+  &__nav.nav--open {
+    @media (max-width: #{$bp-desktop - 1px}) {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
     }
   }
 
   &__phone {
     font-weight: 600;
     white-space: nowrap;
+    color: $color-primary;
     @include focus-ring;
 
     @media (max-width: #{$bp-tablet - 1px}) {
@@ -79,6 +113,8 @@
   }
 
   &__burger {
+    position: relative;
+    z-index: 112;
     margin-left: auto;
 
     @include desktop-up {
@@ -98,6 +134,12 @@
     }
   }
 
+  &__item--phone {
+    @include desktop-up {
+      display: none;
+    }
+  }
+
   &__link {
     font-size: 15px;
     font-weight: 500;
@@ -109,9 +151,14 @@
     &--active {
       color: $color-text;
     }
+
+    &--phone {
+      font-size: 18px;
+      font-weight: 700;
+      color: $color-primary;
+    }
   }
 
-  // WordPress menu fallback
   .menu-item a {
     font-size: 15px;
     font-weight: 500;
@@ -155,4 +202,8 @@
   &--open &__line:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
+}
+
+body.menu-open {
+  overflow: hidden;
 }

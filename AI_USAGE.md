@@ -5,7 +5,7 @@
 | Каркас проекта | Vite, SCSS-структура БЭМ, `vite.config.js` с копированием в WP | Структура папок, скрипты npm |
 | HTML-разметка | Семантический каркас секций, meta/OG, JSON-LD | Соответствие ТЗ, тексты |
 | SCSS | Переменные, миксины, блоки header/hero/calculator | Токены под макет после экспорта PNG |
-| Калькулятор JS | Логика range/input, формула аннуитета, JSON alert | Границы полей, UX ввода сумм |
+| Калькулятор JS | Логика range/input, формула аннуитета, вывод JSON в `<dialog>` | Границы полей, UX ввода сумм, повторная отправка |
 | Бургер-меню | JS + классы `nav--open` | ARIA, закрытие по клику на ссылку |
 | WordPress | `functions.php`, шаблон `page-landing.php`, enqueue dist | Установка на WP, module script |
 | Docker / CI | GitHub Actions для Pages | URL репозитория в `homepage` |

@@ -13,6 +13,7 @@ declare(strict_types=1);
 <?php wp_body_open(); ?>
 
 <header class="header">
+    <div class="header__backdrop" aria-hidden="true"></div>
     <div class="container header__inner">
         <a class="header__logo" href="<?php echo esc_url(home_url('/')); ?>" aria-label="<?php bloginfo('name'); ?> — на главную">
             <span class="header__logo-mark">FMF</span>
@@ -35,7 +36,7 @@ declare(strict_types=1);
             ?>
         </nav>
 
-        <a class="header__phone" href="tel:+78001234567">8 800 123-45-67</a>
+        <a class="header__phone" href="tel:+78001234567" title="Позвонить">8 800 123-45-67</a>
 
         <button class="header__burger burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="site-nav">
             <span class="burger__line"></span>

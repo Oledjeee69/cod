@@ -115,15 +115,34 @@
     border: 1px solid $color-border;
   }
 
+  &__info {
+    display: grid;
+    gap: 8px;
+  }
+
   &__text {
     color: $color-text-muted;
-    margin: 8px 0;
+    margin: 0;
+  }
+
+  &__phone {
+    font-family: $font-display;
+    font-size: clamp(22px, 4vw, 28px);
+    font-weight: 700;
+    color: $color-primary;
+    @include focus-ring;
   }
 
   &__link {
     font-weight: 600;
-    color: $color-primary;
+    color: $color-text;
     @include focus-ring;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 }
 

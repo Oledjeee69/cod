@@ -33,11 +33,12 @@
       rel="stylesheet"
     />
     <title>FMF — Лизинг автомобилей</title>
-    <script type="module" crossorigin src="./assets/index-D0kQu7Qh.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CmJK4Nx8.css">
+    <script type="module" crossorigin src="./assets/index-DbuxNtHl.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Dv3amZVt.css">
   </head>
   <body class="page">
     <header class="header">
+      <div class="header__backdrop" aria-hidden="true"></div>
       <div class="container header__inner">
         <a class="header__logo" href="#" aria-label="FMF — на главную">
           <span class="header__logo-mark">FMF</span>
@@ -50,10 +51,13 @@
             <li class="nav__item"><a class="nav__link" href="#benefits">Преимущества</a></li>
             <li class="nav__item"><a class="nav__link" href="#how">Как это работает</a></li>
             <li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a></li>
+            <li class="nav__item nav__item--phone">
+              <a class="nav__link nav__link--phone" href="tel:+78001234567">8 800 123-45-67</a>
+            </li>
           </ul>
         </nav>
 
-        <a class="header__phone" href="tel:+78001234567">8 800 123-45-67</a>
+        <a class="header__phone" href="tel:+78001234567" title="Позвонить">8 800 123-45-67</a>
 
         <button
           class="header__burger burger"
@@ -83,11 +87,12 @@
           <div class="hero__media">
             <img
               class="hero__image"
-              src="./assets/car-hero.svg"
+              src=""
               alt="Современный автомобиль в лизинг"
               width="640"
               height="420"
               fetchpriority="high"
+              decoding="async"
             />
           </div>
         </div>
@@ -251,15 +256,30 @@
 
       <section class="contacts" id="contacts" aria-labelledby="contacts-title">
         <div class="container contacts__inner">
-          <div>
+          <div class="contacts__info">
             <h2 class="section-title" id="contacts-title">Контакты</h2>
             <p class="contacts__text">Москва, Пресненская наб., 12</p>
+            <a class="contacts__phone" href="tel:+78001234567">8 800 123-45-67</a>
             <a class="contacts__link" href="mailto:hello@fmf-leasing.ru">hello@fmf-leasing.ru</a>
           </div>
-          <a class="button button--outline" href="tel:+78001234567">Позвонить</a>
+          <div class="contacts__actions">
+            <a class="button button--primary" href="tel:+78001234567">Позвонить</a>
+            <a class="button button--outline" href="mailto:hello@fmf-leasing.ru">Написать</a>
+          </div>
         </div>
       </section>
     </main>
+
+    <dialog class="application-dialog" id="application-dialog" aria-labelledby="application-dialog-title">
+      <div class="application-dialog__inner">
+        <h2 class="application-dialog__title" id="application-dialog-title">Заявка принята</h2>
+        <p class="application-dialog__text">Данные калькулятора (JSON):</p>
+        <pre class="application-dialog__json" id="application-json"></pre>
+        <button class="button button--primary application-dialog__close" type="button" id="application-dialog-close">
+          Закрыть
+        </button>
+      </div>
+    </dialog>
 
     <footer class="footer">
       <div class="container footer__inner">
