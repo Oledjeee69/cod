@@ -1,0 +1,27 @@
+// Design tokens (уточнить по design/desktop.png в Perfect Pixel)
+$color-bg: #f4f6f8;
+$color-surface: #ffffff;
+$color-text: #1b1f24;
+$color-text-muted: #5c6670;
+$color-primary: #e85d04;
+$color-primary-hover: #d45103;
+$color-border: #e2e8f0;
+$color-accent-soft: #fff1e8;
+
+$font-body: 'Manrope', system-ui, sans-serif;
+$font-display: 'Unbounded', 'Manrope', sans-serif;
+
+$container-max: 1320px;
+$container-padding: 24px;
+$container-padding-desktop: 60px;
+
+$radius-sm: 8px;
+$radius-md: 16px;
+$radius-lg: 24px;
+
+$shadow-card: 0 12px 40px rgba(27, 31, 36, 0.08);
+
+$bp-tablet: 768px;
+$bp-desktop: 1280px;
+
+$transition: 0.2s ease;

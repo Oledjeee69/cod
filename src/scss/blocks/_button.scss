@@ -1,0 +1,58 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 28px;
+  border-radius: $radius-sm;
+  font-weight: 700;
+  font-size: 15px;
+  transition: background $transition, color $transition, border-color $transition;
+  @include focus-ring;
+
+  &--primary {
+    background: $color-primary;
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background: $color-primary-hover;
+    }
+  }
+
+  &--outline {
+    border: 1px solid $color-border;
+    background: transparent;
+
+    &:hover {
+      border-color: $color-text;
+    }
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+}
+
+.page {
+  font-family: $font-body;
+  color: $color-text;
+  background: $color-bg;
+  line-height: 1.5;
+  min-height: 100vh;
+
+  &__main {
+    overflow-x: hidden;
+  }
+}
+
+.container {
+  @include container;
+}

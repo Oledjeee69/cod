@@ -1,0 +1,67 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.hero {
+  padding: 48px 0 32px;
+  background: linear-gradient(180deg, $color-surface 0%, $color-bg 100%);
+
+  @include desktop-up {
+    padding: 72px 0 48px;
+  }
+
+  &__inner {
+    @include container;
+    display: grid;
+    gap: 40px;
+    align-items: center;
+
+    @include desktop-up {
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: $color-accent-soft;
+    color: $color-primary;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    max-width: 520px;
+    color: $color-text-muted;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  &__cta {
+    display: inline-flex;
+  }
+
+  &__media {
+    position: relative;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    background: $color-accent-soft;
+    box-shadow: $shadow-card;
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+  }
+}

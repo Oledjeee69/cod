@@ -1,0 +1,158 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba($color-surface, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid $color-border;
+
+  &__inner {
+    @include container;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    min-height: 72px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: $font-display;
+    font-weight: 700;
+    @include focus-ring;
+  }
+
+  &__logo-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 52px;
+    padding: 6px 10px;
+    border-radius: $radius-sm;
+    background: $color-primary;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+  }
+
+  &__logo-text {
+    font-size: 14px;
+    color: $color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  &__nav {
+    margin-left: auto;
+
+    @media (max-width: #{$bp-desktop - 1px}) {
+      position: fixed;
+      inset: 72px 0 auto 0;
+      padding: 24px;
+      background: $color-surface;
+      border-bottom: 1px solid $color-border;
+      transform: translateY(-120%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform $transition, opacity $transition;
+
+      &.nav--open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  &__phone {
+    font-weight: 600;
+    white-space: nowrap;
+    @include focus-ring;
+
+    @media (max-width: #{$bp-tablet - 1px}) {
+      display: none;
+    }
+  }
+
+  &__burger {
+    margin-left: auto;
+
+    @include desktop-up {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    display: flex;
+    gap: 28px;
+
+    @media (max-width: #{$bp-desktop - 1px}) {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  &__link {
+    font-size: 15px;
+    font-weight: 500;
+    color: $color-text-muted;
+    transition: color $transition;
+    @include focus-ring;
+
+    &:hover,
+    &--active {
+      color: $color-text;
+    }
+  }
+
+  // WordPress menu fallback
+  .menu-item a {
+    font-size: 15px;
+    font-weight: 500;
+    color: $color-text-muted;
+    @include focus-ring;
+
+    &:hover {
+      color: $color-text;
+    }
+  }
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border-radius: $radius-sm;
+  @include focus-ring;
+
+  &__line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: $color-text;
+    border-radius: 2px;
+    transition: transform $transition, opacity $transition;
+  }
+
+  &--open &__line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  &--open &__line:nth-child(2) {
+    opacity: 0;
+  }
+
+  &--open &__line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}

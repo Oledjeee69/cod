@@ -1,0 +1,161 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.section-title {
+  font-family: $font-display;
+  font-size: clamp(26px, 3.5vw, 36px);
+  margin-bottom: 28px;
+}
+
+.benefits {
+  padding: 56px 0;
+  background: $color-surface;
+
+  .container {
+    @include container;
+  }
+
+  &__list {
+    display: grid;
+    gap: 20px;
+
+    @include tablet-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.benefit-card {
+  padding: 24px;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: $color-bg;
+
+  &__icon {
+    display: inline-flex;
+    margin-bottom: 16px;
+    font-family: $font-display;
+    font-size: 14px;
+    color: $color-primary;
+  }
+
+  &__title {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    color: $color-text-muted;
+    line-height: 1.6;
+    font-size: 15px;
+  }
+}
+
+.steps {
+  padding: 56px 0;
+  background: $color-bg;
+
+  .container {
+    @include container;
+  }
+
+  &__list {
+    display: grid;
+    gap: 16px;
+
+    @include tablet-up {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px;
+    background: $color-surface;
+    border-radius: $radius-md;
+    border: 1px solid $color-border;
+  }
+
+  &__num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: $color-accent-soft;
+    color: $color-primary;
+    font-weight: 700;
+  }
+
+  &__text {
+    line-height: 1.5;
+    padding-top: 8px;
+  }
+}
+
+.contacts {
+  padding: 56px 0 72px;
+
+  .container {
+    @include container;
+  }
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 32px;
+    background: $color-surface;
+    border-radius: $radius-lg;
+    border: 1px solid $color-border;
+  }
+
+  &__text {
+    color: $color-text-muted;
+    margin: 8px 0;
+  }
+
+  &__link {
+    font-weight: 600;
+    color: $color-primary;
+    @include focus-ring;
+  }
+}
+
+.footer {
+  padding: 24px 0 32px;
+  border-top: 1px solid $color-border;
+  background: $color-surface;
+
+  .container {
+    @include container;
+  }
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  &__copy {
+    color: $color-text-muted;
+    font-size: 14px;
+  }
+
+  &__link {
+    font-size: 14px;
+    color: $color-text-muted;
+    @include focus-ring;
+
+    &:hover {
+      color: $color-text;
+    }
+  }
+}
