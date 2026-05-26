@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="FMF — лизинг автомобилей. Рассчитайте ежемесячный платёж онлайн и оформите заявку за несколько минут."
+    />
+    <meta property="og:title" content="FMF — Лизинг автомобилей" />
+    <meta
+      property="og:description"
+      content="Выгодный лизинг автомобилей: калькулятор платежа, быстрое одобрение, прозрачные условия."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta name="theme-color" content="#e85d04" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FinancialService",
+        "name": "FMF Leasing",
+        "description": "Лизинг автомобилей с онлайн-калькулятором платежа",
+        "areaServed": "RU",
+        "telephone": "+7-800-123-45-67"
+      }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>FMF — Лизинг автомобилей</title>
+    <script type="module" crossorigin src="./assets/index-D0kQu7Qh.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CmJK4Nx8.css">
+  </head>
+  <body class="page">
+    <header class="header">
+      <div class="container header__inner">
+        <a class="header__logo" href="#" aria-label="FMF — на главную">
+          <span class="header__logo-mark">FMF</span>
+          <span class="header__logo-text">Leasing</span>
+        </a>
+
+        <nav class="header__nav nav" id="site-nav" aria-label="Основное меню">
+          <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link nav__link--active" href="#calculator">Калькулятор</a></li>
+            <li class="nav__item"><a class="nav__link" href="#benefits">Преимущества</a></li>
+            <li class="nav__item"><a class="nav__link" href="#how">Как это работает</a></li>
+            <li class="nav__item"><a class="nav__link" href="#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+
+        <a class="header__phone" href="tel:+78001234567">8 800 123-45-67</a>
+
+        <button
+          class="header__burger burger"
+          type="button"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="page__main">
+      <section class="hero">
+        <div class="container hero__inner">
+          <div class="hero__content">
+            <p class="hero__label">Автолизинг без лишних шагов</p>
+            <h1 class="hero__title">Лизинг автомобиля под ваш бюджет</h1>
+            <p class="hero__text">
+              Рассчитайте ежемесячный платёж, настройте срок и первоначальный взнос — и отправьте заявку в один клик.
+            </p>
+            <a class="button button--primary hero__cta" href="#calculator">Рассчитать платёж</a>
+          </div>
+          <div class="hero__media">
+            <img
+              class="hero__image"
+              src="./assets/car-hero.svg"
+              alt="Современный автомобиль в лизинг"
+              width="640"
+              height="420"
+              fetchpriority="high"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="calculator" id="calculator" aria-labelledby="calculator-title">
+        <div class="container">
+          <div class="calculator__head">
+            <h2 class="calculator__title" id="calculator-title">Калькулятор лизинга</h2>
+            <p class="calculator__subtitle">Укажите параметры — мы покажем ориентировочный ежемесячный платёж</p>
+          </div>
+
+          <div class="calculator__grid">
+            <form class="calculator__form calc" id="calc-form" novalidate>
+              <div class="calc__field">
+                <div class="calc__row">
+                  <label class="calc__label" for="car-price">Стоимость автомобиля, ₽</label>
+                  <output class="calc__value" id="car-price-out" for="car-price car-price-range">3 300 000</output>
+                </div>
+                <input
+                  class="calc__range"
+                  type="range"
+                  id="car-price-range"
+                  name="carPriceRange"
+                  min="1500000"
+                  max="10000000"
+                  step="50000"
+                  value="3300000"
+                />
+                <input
+                  class="calc__input"
+                  type="text"
+                  id="car-price"
+                  name="carPrice"
+                  inputmode="numeric"
+                  autocomplete="off"
+                  value="3 300 000"
+                />
+              </div>
+
+              <div class="calc__field">
+                <div class="calc__row">
+                  <label class="calc__label" for="down-payment">Первоначальный взнос, ₽</label>
+                  <output class="calc__value" id="down-payment-out" for="down-payment down-payment-range">
+                    <span id="down-payment-value">660 000</span>
+                    <span class="calc__percent" id="down-percent">(20%)</span>
+                  </output>
+                </div>
+                <input
+                  class="calc__range"
+                  type="range"
+                  id="down-payment-range"
+                  name="downPaymentRange"
+                  min="10"
+                  max="60"
+                  step="1"
+                  value="20"
+                />
+                <input
+                  class="calc__input"
+                  type="text"
+                  id="down-payment"
+                  name="downPayment"
+                  inputmode="numeric"
+                  autocomplete="off"
+                  value="660 000"
+                />
+              </div>
+
+              <div class="calc__field">
+                <div class="calc__row">
+                  <label class="calc__label" for="lease-term">Срок лизинга, мес.</label>
+                  <output class="calc__value" id="lease-term-out" for="lease-term lease-term-range">36</output>
+                </div>
+                <input
+                  class="calc__range"
+                  type="range"
+                  id="lease-term-range"
+                  name="leaseTermRange"
+                  min="6"
+                  max="120"
+                  step="1"
+                  value="36"
+                />
+                <input
+                  class="calc__input calc__input--short"
+                  type="number"
+                  id="lease-term"
+                  name="leaseTerm"
+                  min="6"
+                  max="120"
+                  value="36"
+                />
+              </div>
+
+              <div class="calc__result">
+                <p class="calc__result-label">Ежемесячный платёж</p>
+                <p class="calc__result-value" id="monthly-payment">89 450 ₽</p>
+              </div>
+
+              <button class="button button--primary button--full calc__submit" type="submit" id="submit-btn">
+                Оформить заявку
+              </button>
+            </form>
+
+            <aside class="calculator__aside aside-card" aria-label="Условия лизинга">
+              <h3 class="aside-card__title">Что входит в расчёт</h3>
+              <ul class="aside-card__list">
+                <li class="aside-card__item">Ставка ориентировочная — уточняется менеджером</li>
+                <li class="aside-card__item">Первоначальный взнос от 10% до 60%</li>
+                <li class="aside-card__item">Срок — от 6 до 120 месяцев</li>
+              </ul>
+              <p class="aside-card__note">Расчёт носит информационный характер и не является публичной офертой.</p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits" id="benefits" aria-labelledby="benefits-title">
+        <div class="container">
+          <h2 class="section-title" id="benefits-title">Преимущества FMF</h2>
+          <ul class="benefits__list">
+            <li class="benefits__item benefit-card">
+              <span class="benefit-card__icon" aria-hidden="true">01</span>
+              <h3 class="benefit-card__title">Быстрое одобрение</h3>
+              <p class="benefit-card__text">Решение по заявке — от 30 минут, минимум документов.</p>
+            </li>
+            <li class="benefits__item benefit-card">
+              <span class="benefit-card__icon" aria-hidden="true">02</span>
+              <h3 class="benefit-card__title">Прозрачные платежи</h3>
+              <p class="benefit-card__text">Фиксированный график без скрытых комиссий в договоре.</p>
+            </li>
+            <li class="benefits__item benefit-card">
+              <span class="benefit-card__icon" aria-hidden="true">03</span>
+              <h3 class="benefit-card__title">Любые автомобили</h3>
+              <p class="benefit-card__text">Новые и с пробегом — подберём программу под задачу.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="steps" id="how" aria-labelledby="steps-title">
+        <div class="container">
+          <h2 class="section-title" id="steps-title">Как это работает</h2>
+          <ol class="steps__list">
+            <li class="steps__item">
+              <span class="steps__num">1</span>
+              <p class="steps__text">Заполните калькулятор и отправьте заявку</p>
+            </li>
+            <li class="steps__item">
+              <span class="steps__num">2</span>
+              <p class="steps__text">Получите персональное предложение от менеджера</p>
+            </li>
+            <li class="steps__item">
+              <span class="steps__num">3</span>
+              <p class="steps__text">Подпишите договор и заберите автомобиль</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="contacts" id="contacts" aria-labelledby="contacts-title">
+        <div class="container contacts__inner">
+          <div>
+            <h2 class="section-title" id="contacts-title">Контакты</h2>
+            <p class="contacts__text">Москва, Пресненская наб., 12</p>
+            <a class="contacts__link" href="mailto:hello@fmf-leasing.ru">hello@fmf-leasing.ru</a>
+          </div>
+          <a class="button button--outline" href="tel:+78001234567">Позвонить</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="footer__copy">© <span id="year"></span> FMF Leasing. Тестовая вёрстка.</p>
+        <a class="footer__link" href="#">Политика конфиденциальности</a>
+      </div>
+    </footer>
+
+  </body>
+</html>
